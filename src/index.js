@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import WebFontLoader from 'webfontloader';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import './index.scss';
+
+WebFontLoader.load({
+  google: { 
+    families: ['Roboto:300,400,500,700', 'Material Icons']
+  }
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();

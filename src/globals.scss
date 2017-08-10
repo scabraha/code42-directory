@@ -1,0 +1,5 @@
+// Sets the global import for react-md as well as the global colors
+@import '../node_modules/react-md/src/scss/react-md';
+
+$md-primary-color: $md-deep-orange-600;
+$md-secondary-color: $md-blue-grey-700;
