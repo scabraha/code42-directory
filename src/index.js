@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import WebFontLoader from 'webfontloader';
-import App from './App';
+import App from './app';
 import './index.scss';
 
 WebFontLoader.load({
