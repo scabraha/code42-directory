@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ServiceStatus, MemberActionTypes } from '../Constants';
+import { ServiceStatus, MemberActionTypes } from '../constants';
 
 function organization(state = '', action) {
   switch(action.type) {

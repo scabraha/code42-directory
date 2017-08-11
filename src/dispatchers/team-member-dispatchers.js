@@ -1,4 +1,4 @@
-import { MemberActionTypes } from '../Constants';
+import { MemberActionTypes } from '../constants';
 import { getMembersForOrg } from '../web/github-web-apis';
 
 export const getTeamMembersByOrg = org => (dispatch) => {
