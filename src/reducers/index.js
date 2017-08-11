@@ -1,6 +1,15 @@
 import { combineReducers } from 'redux';
 import { ServiceStatus, MemberActionTypes } from '../Constants';
 
+function organization(state = '', action) {
+  switch(action.type) {
+    case MemberActionTypes.GET_MEMBERS_BY_ORG:
+      return action.org;
+    default:
+      return state;
+  }
+}
+
 function teamMembers(state = [], action) {
   switch(action.type) {
     case MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS:
@@ -46,6 +55,7 @@ function memberDetailsRequestStatus(state = ServiceStatus.NOT_STARTED, action) {
 }
 
 export default combineReducers({
+  organization,
   teamMembers,
   teamMemberRequestStatus,
   memberDetails,
