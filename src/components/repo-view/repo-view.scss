@@ -1,0 +1,21 @@
+@import '../../globals';
+
+.repo-list {
+  border: 1px solid $md-secondary-color;
+  width: 100%;
+
+  li:not(:last-child) {
+    border-bottom: 1px solid $md-secondary-color;
+  }
+}
+.repo-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  text-align: left;
+
+  a {
+    color: $md-primary-color;
+  }
+}

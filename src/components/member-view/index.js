@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import MemberView from './member-view';
 
 const mapStateToProps = state => ({
-  organization: state.organization,
-  teamMemberRequestStatus: state.teamMemberRequestStatus,
+  organization: state.team.organization,
+  teamMemberRequestStatus: state.team.memberRequestStatus,
 });
 
 export default connect(mapStateToProps)(MemberView);

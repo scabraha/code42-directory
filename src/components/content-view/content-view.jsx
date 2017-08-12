@@ -32,7 +32,13 @@ export default class ContentView extends React.Component {
           />
         );
         break;
-      case ServiceStatus.NOT_STARTED:
+
+      case ServiceStatus.LOADING:
+        avatar = LOGO;
+        title = `Loading ${this.props.selectedMemberId}'s details`;
+        break;
+
+      default:
         avatar = LOGO; 
         title = 'Welcome to the Code42 GitHub Directory';
         content = (
@@ -41,11 +47,6 @@ export default class ContentView extends React.Component {
           </p>
         );
         break;
-      case ServiceStatus.LOADING:
-        avatar = LOGO;
-        title = `Loading ${this.props.selectedMemberId}'s details`;
-        break;
-    
     }
 
     return (

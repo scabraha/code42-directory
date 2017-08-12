@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RepoView from '../repo-view';
 import './member-details.scss';
 
 class MemberDetails extends React.Component {
@@ -24,7 +25,7 @@ class MemberDetails extends React.Component {
           <div>Joined: {dateJoinedDisplay}</div>
           {location}
         </div>
-        <div>repos here</div>
+        <RepoView />
       </div>
     )
   }

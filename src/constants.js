@@ -14,5 +14,8 @@ export const MemberActionTypes = keymirror({
   GET_MEMBER_DETAILS_BY_ID: null,
   GET_MEMBER_DETAILS_BY_ID_SUCCESS: null,
   GET_MEMBER_DETAILS_BY_ID_FAILURE: null,
+  GET_REPOS_BY_ID: null,
+  GET_REPOS_BY_ID_SUCCESS: null,
+  GET_REPOS_BY_ID_FAILURE: null,
 });
 

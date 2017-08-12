@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
 import MemberList from './member-list';
-import { getUserDetailsById } from '../../dispatchers/team-member-dispatchers';
+import { getDetailsByUserId, getReposByUserId } from '../../dispatchers/team-member-dispatchers';
 
 const mapStateToProps = state => ({
-  teamMembers: state.teamMembers,
-  selectedMemberId: state.selectedMemberId,
+  teamMembers: state.team.members,
+  selectedMemberId: state.member.selectedId,
 });
 
 const mapDispatchToProps = dispatch => ({
-  onMemberSelect: userId => dispatch(getUserDetailsById(userId)),
+  onMemberSelect: (userId) => {
+    dispatch(getDetailsByUserId(userId));
+    dispatch(getReposByUserId(userId));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemberList);
