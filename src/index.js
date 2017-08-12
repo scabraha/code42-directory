@@ -14,8 +14,10 @@ WebFontLoader.load({
   },
 });
 
+// Create the redux store and include Redux DevTools if it's available
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+
 ReactDOM.render(
   <Provider store={store}><AppContainer /></Provider>,
   document.getElementById('root'),

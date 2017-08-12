@@ -6,6 +6,10 @@ import MemberList from '../member-list';
 import { ServiceStatus } from '../../constants';
 import './member-view.scss';
 
+/**
+ * Renders a loading indicator with a loading message
+ * @param {String} org The org that members are being retrieved for.
+ */
 function renderLoadingIndicator(org) {
   return (
     <div className="member-view-text md-subheading-2 md-text-center">
@@ -15,16 +19,25 @@ function renderLoadingIndicator(org) {
   )
 }
 
-// TODO: Figure out centering failure text
-function renderFailureMessage(org) {
+/**
+ * Renders a failure indicator
+ */
+function renderFailureMessage() {
   return (
     <div className="member-view-text md-subheading-2 md-text-center">
       <div><FailureIndicator /></div>
-      Failed to retrieve members for {org}
+      Member retrieval failure
     </div>
   )
 }
 
+/**
+ * Represents the team members view. Resposible for showing applicable status messages based on the
+ * retrieval status and showing the MemberList when members are retrieved.
+ * @param {String} organization The organization members are being retrieved for.
+ * @param {String} teamMemberRequestStatus The current request status for team members. Used to show
+ * the appropriate status message.
+ */
 class MemberView extends React.Component {
   render() {
     let content;

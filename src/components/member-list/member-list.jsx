@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './member-list.scss';
 
+/**
+ * Represents a list of team members
+ * @prop {Array} teamMembers The team members to display.
+ * @prop {Function} onMemberSelect The callback to execute when a team member is selected.
+ * @prop {String} selectedMemberId The currently selected team member. Used to highlight the
+ * applicable list item.
+ */
 class MemberList extends React.Component {i
   constructor(props) {
     super(props);

@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import RepoView from '../repo-view';
 import './member-details.scss';
 
+/**
+ * Represents the details of a team member.
+ * @prop {String} joinDate The date the team member joined GitHub. Must be in ISO date format.
+ * @prop {String} [location] The location that the team member resides.
+ * @prop {Email} [email] The email of the team member.
+ */
 class MemberDetails extends React.Component {
   render() {
     let location;

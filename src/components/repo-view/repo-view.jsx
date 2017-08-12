@@ -15,6 +15,11 @@ function renderRepoItem(repo) {
 
 }
 
+/**
+ * Represents a list repositories with applicable status messages depending on the request status.
+ * @prop {String} repoRequestStatus The current status of the repo request.
+ * @prop {Array} repos The array of repositories to show. May be empty if none are available.
+ */
 class RepoView extends React.Component {
   render() {
     if (this.props.repoRequestStatus === ServiceStatus.LOADING) {
@@ -30,7 +35,10 @@ class RepoView extends React.Component {
 RepoView.propTypes = {
   repoRequestStatus: PropTypes.string.isRequired,
   repos: PropTypes.arrayOf(PropTypes.shape({
-    // TODO: Fill this out
+    html_url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    language: PropTypes.string.isRequired
+    description: PropTypes.string,
   })).isRequired
 }
 

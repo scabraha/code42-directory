@@ -1,5 +1,8 @@
 import keymirror from 'keymirror';
 
+/**
+ * Service Status constants used to maintain web request status for API's
+ */
 export const ServiceStatus = keymirror({
   NOT_STARTED: null,
   LOADING: null,
@@ -7,6 +10,9 @@ export const ServiceStatus = keymirror({
   FAILURE: null,
 });
 
+/**
+ * The action types for retrieving team members, their details, and applicable repositories.
+ */
 export const MemberActionTypes = keymirror({
   GET_MEMBERS_BY_ORG: null,
   GET_MEMBERS_BY_ORG_SUCCESS: null,
