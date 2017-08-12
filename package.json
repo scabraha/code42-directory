@@ -98,7 +98,7 @@
     ]
   },
   "eslintConfig": {
-    "extends": "airbnb",
+    "extends": "react-app",
     "env": {
       "jasmine": true
     }
