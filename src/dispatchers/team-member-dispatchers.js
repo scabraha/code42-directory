@@ -7,8 +7,8 @@ export const getTeamMembersByOrg = org => (dispatch) => {
     org,
     data => dispatch({
       type: MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS,
-      members: data
+      members: data,
     }),
-    () => dispatch({ type: MemberActionTypes.GET_MEMBERS_BY_ORG_FAILURE })
+    () => dispatch({ type: MemberActionTypes.GET_MEMBERS_BY_ORG_FAILURE }),
   );
-} 
+};

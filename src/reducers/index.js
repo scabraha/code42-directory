@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { ServiceStatus, MemberActionTypes } from '../constants';
 
 function organization(state = '', action) {
-  switch(action.type) {
+  switch (action.type) {
     case MemberActionTypes.GET_MEMBERS_BY_ORG:
       return action.org;
     default:
@@ -11,7 +11,7 @@ function organization(state = '', action) {
 }
 
 function teamMembers(state = [], action) {
-  switch(action.type) {
+  switch (action.type) {
     case MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS:
       return action.members;
     default:
@@ -20,7 +20,7 @@ function teamMembers(state = [], action) {
 }
 
 function teamMemberRequestStatus(state = ServiceStatus.NOT_STARTED, action) {
-  switch(action.type) {
+  switch (action.type) {
     case MemberActionTypes.GET_MEMBERS_BY_ORG:
       return ServiceStatus.LOADING;
     case MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS:
@@ -33,7 +33,7 @@ function teamMemberRequestStatus(state = ServiceStatus.NOT_STARTED, action) {
 }
 
 function memberDetails(state = {}, action) {
-  switch(action.type) {
+  switch (action.type) {
     case MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_SUCCESS:
       return action.memberDetails;
     default:
@@ -42,7 +42,7 @@ function memberDetails(state = {}, action) {
 }
 
 function memberDetailsRequestStatus(state = ServiceStatus.NOT_STARTED, action) {
-  switch(action.type) {
+  switch (action.type) {
     case MemberActionTypes.GET_MEMBER_DETAILS_BY_ID:
       return ServiceStatus.LOADING;
     case MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_SUCCESS:
@@ -59,5 +59,5 @@ export default combineReducers({
   teamMembers,
   teamMemberRequestStatus,
   memberDetails,
-  memberDetailsRequestStatus
+  memberDetailsRequestStatus,
 });

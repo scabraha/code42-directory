@@ -13,6 +13,6 @@ export const MemberActionTypes = keymirror({
   GET_MEMBERS_BY_ORG_FAILURE: null,
   GET_MEMBER_DETAILS_BY_ID: null,
   GET_MEMBER_DETAILS_BY_ID_SUCCESS: null,
-  GET_MEMBER_DETAILS_BY_ID_FAILURE: null
+  GET_MEMBER_DETAILS_BY_ID_FAILURE: null,
 });
 

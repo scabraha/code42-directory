@@ -9,21 +9,21 @@ describe('Team Member Dispatchers', () => {
 
     getTeamMembersByOrg('test')(dispatchSpy);
     expect(dispatchSpy.calls.mostRecent().args).toEqual(
-      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG, org: 'test' }]
+      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG, org: 'test' }],
     );
 
     expect(GitHubWebAPis.getMembersForOrg).toHaveBeenCalled();
-    
+
     const args = GitHubWebAPis.getMembersForOrg.calls.mostRecent().args;
     expect(args[0]).toBe('test');
     args[1]('testData');
     expect(dispatchSpy.calls.mostRecent().args).toEqual(
-      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS, members: 'testData' }]
+      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS, members: 'testData' }],
     );
 
     args[2]('testData');
     expect(dispatchSpy.calls.mostRecent().args).toEqual(
-      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG_FAILURE }]
+      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG_FAILURE }],
     );
   });
 });

@@ -9,14 +9,14 @@ import reducer from './reducers';
 import './index.scss';
 
 WebFontLoader.load({
-  google: { 
-    families: ['Roboto:300,400,500,700', 'Material Icons']
-  }
+  google: {
+    families: ['Roboto:300,400,500,700', 'Material Icons'],
+  },
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
-  <Provider store={store}><App /></Provider>, 
-  document.getElementById('root')
+  <Provider store={store}><App /></Provider>,
+  document.getElementById('root'),
 );

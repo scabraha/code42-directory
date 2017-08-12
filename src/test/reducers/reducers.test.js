@@ -6,8 +6,8 @@ const INITIAL_STATE = {
   teamMembers: [],
   teamMemberRequestStatus: ServiceStatus.NOT_STARTED,
   memberDetails: {},
-  memberDetailsRequestStatus: ServiceStatus.NOT_STARTED
-}
+  memberDetailsRequestStatus: ServiceStatus.NOT_STARTED,
+};
 
 function runReducer(action, expected, initialState = {}) {
   expect(reducer(initialState, typeof action === 'string' ? { type: action } : action))
@@ -23,10 +23,10 @@ describe('Reducers', () => {
     runReducer(
       { type: MemberActionTypes.GET_MEMBERS_BY_ORG, org: 'test' },
       Object.assign(
-        {}, 
-        INITIAL_STATE, 
-        { organization: 'test', teamMemberRequestStatus: ServiceStatus.LOADING }
-      )
+        {},
+        INITIAL_STATE,
+        { organization: 'test', teamMemberRequestStatus: ServiceStatus.LOADING },
+      ),
     );
   });
 
@@ -34,17 +34,17 @@ describe('Reducers', () => {
     runReducer(
       { type: MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS, members: ['test'] },
       Object.assign(
-        {}, 
-        INITIAL_STATE, 
-        { teamMemberRequestStatus: ServiceStatus.SUCCESS, teamMembers: ['test'] }
-      )
+        {},
+        INITIAL_STATE,
+        { teamMemberRequestStatus: ServiceStatus.SUCCESS, teamMembers: ['test'] },
+      ),
     );
   });
 
   it('Verifies that GET_MEMBERS_BY_ORG_FAILURE sets the correct state', () => {
     runReducer(
       { type: MemberActionTypes.GET_MEMBERS_BY_ORG_FAILURE },
-      Object.assign({}, INITIAL_STATE, { teamMemberRequestStatus: ServiceStatus.FAILURE })
+      Object.assign({}, INITIAL_STATE, { teamMemberRequestStatus: ServiceStatus.FAILURE }),
     );
   });
 
@@ -52,21 +52,21 @@ describe('Reducers', () => {
     runReducer(
       MemberActionTypes.GET_MEMBER_DETAILS_BY_ID,
       Object.assign(
-        {}, 
-        INITIAL_STATE, 
-        { memberDetailsRequestStatus: ServiceStatus.LOADING } 
-      )
+        {},
+        INITIAL_STATE,
+        { memberDetailsRequestStatus: ServiceStatus.LOADING },
+      ),
     );
   });
 
   it('Verifies that GET_MEMBER_DETAILS_BY_ID_SUCCESS sets the correct state', () => {
     runReducer(
-      { type: MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_SUCCESS, memberDetails: { id: 'test'}},
+      { type: MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_SUCCESS, memberDetails: { id: 'test' } },
       Object.assign(
-        {}, 
-        INITIAL_STATE, 
-        { memberDetailsRequestStatus: ServiceStatus.SUCCESS, memberDetails: { id: 'test' } }
-      )
+        {},
+        INITIAL_STATE,
+        { memberDetailsRequestStatus: ServiceStatus.SUCCESS, memberDetails: { id: 'test' } },
+      ),
     );
   });
 
@@ -74,11 +74,10 @@ describe('Reducers', () => {
     runReducer(
       { type: MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_FAILURE },
       Object.assign(
-        {}, 
-        INITIAL_STATE, 
-        { memberDetailsRequestStatus: ServiceStatus.FAILURE }
-      )
+        {},
+        INITIAL_STATE,
+        { memberDetailsRequestStatus: ServiceStatus.FAILURE },
+      ),
     );
   });
-
 });
