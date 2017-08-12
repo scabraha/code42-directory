@@ -1,0 +1,31 @@
+@import '../../globals';
+
+$img-dimensions: 50px;
+$img-border-radius: 30px;
+
+.member-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid $md-blue-grey-500;
+
+  img {
+    width: $img-dimensions;
+    height: $img-dimensions;
+    -webkit-border-radius: $img-border-radius;
+    border-radius: $img-border-radius;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background-color: $md-blue-grey-400;
+    color: $md-white-base;
+  }
+
+  &[aria-selected] {
+    background-color: $md-blue-grey-700;
+    color: $md-white-base;
+  }
+}
+

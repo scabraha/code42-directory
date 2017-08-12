@@ -7,9 +7,10 @@
   height: 100%;
   width: $sidebar-width; 
   box-shadow: $DP8;
+  overflow-y: auto;
 }
 
-.member-view-load {
+.member-view-text {
   padding-top: 20px;
   display: flex;
   flex-direction: column;

@@ -5,5 +5,6 @@ import './loading-indicator.scss';
  * Renders a loading indicator with a spinning icon and loading text
  */
 export default function () {
-  return <i className="loading-spinner material-icons">autorenew</i>;
+  // Represents the autorenew material icon
+  return <i className="loading-spinner material-icons">&#xE863;</i>;
 }
