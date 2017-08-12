@@ -8,17 +8,22 @@ describe('Team Member Dispatchers', () => {
     const dispatchSpy = jasmine.createSpy('dispatch');
 
     getTeamMembersByOrg('test')(dispatchSpy);
+    expect(dispatchSpy.calls.mostRecent().args).toEqual(
+      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG, org: 'test' }]
+    );
 
     expect(GitHubWebAPis.getMembersForOrg).toHaveBeenCalled();
     
     const args = GitHubWebAPis.getMembersForOrg.calls.mostRecent().args;
     expect(args[0]).toBe('test');
     args[1]('testData');
+    expect(dispatchSpy.calls.mostRecent().args).toEqual(
+      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG_SUCCESS, members: 'testData' }]
+    );
+
     args[2]('testData');
-    expect(dispatchSpy).toHaveBeenCalledWith(
-      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG, org: 'test' }],
-      [{ type: MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_SUCCESS, members: 'testData' }],
-      [{ type: MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_FAILURE }]
-    )
+    expect(dispatchSpy.calls.mostRecent().args).toEqual(
+      [{ type: MemberActionTypes.GET_MEMBERS_BY_ORG_FAILURE }]
+    );
   });
 });
