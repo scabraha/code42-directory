@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { getMembersForOrg } from '../../web/github-web-apis';
+import { getMembersForOrg, getDetailsForUserId } from '../../web/github-web-apis';
 
 describe('GitHub Web APIs', () => {
   it('Calls getMembersForOrg and ensures the url and callbacks are correct', () => {
@@ -12,6 +12,24 @@ describe('GitHub Web APIs', () => {
 
     getMembersForOrg('test', onSuccess, onFailure);
     expect($.getJSON).toHaveBeenCalledWith('http://api.github.com/orgs/test/members');
+
+    doneSpy.calls.mostRecent().args[0]('testData');
+    expect(onSuccess).toHaveBeenCalledWith('testData');
+
+    failSpy.calls.mostRecent().args[0]();
+    expect(onFailure).toHaveBeenCalled();
+  });
+
+  it('Calls getDetailsForUserId and ensures the url and callbacks are correct', () => {
+    const failSpy = jasmine.createSpy('failSpy');
+    const doneSpy = jasmine.createSpy('doneSpy').and.returnValue({ fail: failSpy });
+    spyOn($, 'getJSON').and.returnValue({ done: doneSpy });
+
+    const onSuccess = jasmine.createSpy('onSuccess');
+    const onFailure = jasmine.createSpy('onFailure');
+
+    getDetailsForUserId('test', onSuccess, onFailure);
+    expect($.getJSON).toHaveBeenCalledWith('http://api.github.com/users/test');
 
     doneSpy.calls.mostRecent().args[0]('testData');
     expect(onSuccess).toHaveBeenCalledWith('testData');

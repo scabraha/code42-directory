@@ -32,6 +32,15 @@ function teamMemberRequestStatus(state = ServiceStatus.NOT_STARTED, action) {
   }
 }
 
+function selectedMemberId(state = '', action) {
+  switch (action.type) {
+    case MemberActionTypes.GET_MEMBER_DETAILS_BY_ID:
+      return action.userId;
+    default:
+      return state;
+  }
+}
+
 function memberDetails(state = {}, action) {
   switch (action.type) {
     case MemberActionTypes.GET_MEMBER_DETAILS_BY_ID_SUCCESS:
@@ -58,6 +67,7 @@ export default combineReducers({
   organization,
   teamMembers,
   teamMemberRequestStatus,
+  selectedMemberId,
   memberDetails,
   memberDetailsRequestStatus,
 });

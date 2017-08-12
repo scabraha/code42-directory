@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   organization: '',
   teamMembers: [],
   teamMemberRequestStatus: ServiceStatus.NOT_STARTED,
+  selectedMemberId: '',
   memberDetails: {},
   memberDetailsRequestStatus: ServiceStatus.NOT_STARTED,
 };
@@ -50,11 +51,11 @@ describe('Reducers', () => {
 
   it('Verifies that GET_MEMBER_DETAILS_BY_ID sets the correct state', () => {
     runReducer(
-      MemberActionTypes.GET_MEMBER_DETAILS_BY_ID,
+      { type: MemberActionTypes.GET_MEMBER_DETAILS_BY_ID, userId: 'test' },
       Object.assign(
         {},
         INITIAL_STATE,
-        { memberDetailsRequestStatus: ServiceStatus.LOADING },
+        { selectedMemberId: 'test', memberDetailsRequestStatus: ServiceStatus.LOADING },
       ),
     );
   });
