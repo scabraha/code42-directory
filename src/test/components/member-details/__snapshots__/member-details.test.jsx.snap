@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Member Details Renders the view with all props and ensures they show 1`] = `
+<div
+  className="member-details"
+>
+  <div
+    className="member-details-info md-body-2"
+  >
+    <span>
+      <a
+        href="mailto://test@domain.com"
+      >
+        test@domain.com
+      </a>
+    </span>
+    <div>
+      Joined: 
+      Invalid Date
+    </div>
+    <div>
+      <i
+        className="material-icons"
+      >
+        
+      </i>
+      USA
+    </div>
+  </div>
+  <RepoView />
+</div>
+`;
+
+exports[`Member Details Renders the view with no email and ensures it renders correctly 1`] = `
+<div
+  className="member-details"
+>
+  <div
+    className="member-details-info md-body-2"
+  >
+    <div>
+      Joined: 
+      Invalid Date
+    </div>
+    <div>
+      <i
+        className="material-icons"
+      >
+        
+      </i>
+      USA
+    </div>
+  </div>
+  <RepoView />
+</div>
+`;
+
+exports[`Member Details Renders the view with no location and ensures it renders correctly 1`] = `
+<div
+  className="member-details"
+>
+  <div
+    className="member-details-info md-body-2"
+  >
+    <span>
+      <a
+        href="mailto://test@domain.com"
+      >
+        test@domain.com
+      </a>
+    </span>
+    <div>
+      Joined: 
+      Invalid Date
+    </div>
+  </div>
+  <RepoView />
+</div>
+`;
+
+exports[`Member Details Renders the view with no location or email and ensures it renders correctly 1`] = `
+<div
+  className="member-details"
+>
+  <div
+    className="member-details-info md-body-2"
+  >
+    <div>
+      Joined: 
+      Invalid Date
+    </div>
+  </div>
+  <RepoView />
+</div>
+`;

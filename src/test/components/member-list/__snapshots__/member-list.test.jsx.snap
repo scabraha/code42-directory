@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Member List Renders the view with no team members and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+>
+  <ul />
+</div>
+`;
+
+exports[`Member List Renders the view with team members and a selection and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+>
+  <ul>
+    <li
+      className="member-list-item noselect"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="url1"
+      />
+      <div>
+        test1
+      </div>
+    </li>
+    <li
+      aria-selected={true}
+      className="member-list-item noselect"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="url2"
+      />
+      <div>
+        test2
+      </div>
+    </li>
+    <li
+      className="member-list-item noselect"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="url3"
+      />
+      <div>
+        test3
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Member List Renders the view with team members and no selection and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+>
+  <ul>
+    <li
+      className="member-list-item noselect"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="url1"
+      />
+      <div>
+        test1
+      </div>
+    </li>
+    <li
+      className="member-list-item noselect"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="url2"
+      />
+      <div>
+        test2
+      </div>
+    </li>
+    <li
+      className="member-list-item noselect"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="url3"
+      />
+      <div>
+        test3
+      </div>
+    </li>
+  </ul>
+</div>
+`;

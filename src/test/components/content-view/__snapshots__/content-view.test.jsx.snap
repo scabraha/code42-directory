@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content View Renders the view while loading member details and ensures logo and loading message show 1`] = `
+<div
+  className="content-view"
+>
+  <div
+    className="content-view-header"
+  >
+    <img
+      alt="avatar"
+      className="content-view-image"
+      src="logo.svg"
+    />
+    <h2
+      className="md-headline"
+    >
+      Loading testId's details
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`Content View Renders the view with member details and ensures details show 1`] = `
+<div
+  className="content-view"
+>
+  <div
+    className="content-view-header"
+  >
+    <img
+      alt="avatar"
+      className="content-view-image"
+      src="testURL"
+    />
+    <h2
+      className="md-headline"
+    >
+      testName
+    </h2>
+  </div>
+  <MemberDetails
+    email="test@test.com"
+    joinDate="6/05/2001"
+    location="USA"
+  />
+</div>
+`;
+
+exports[`Content View Renders the view without member details and ensures logo and welcome message show 1`] = `
+<div
+  className="content-view"
+>
+  <div
+    className="content-view-header"
+  >
+    <img
+      alt="avatar"
+      className="content-view-image"
+      src="logo.svg"
+    />
+    <h2
+      className="md-headline"
+    >
+      Welcome to the Code42 GitHub Directory
+    </h2>
+  </div>
+  <p
+    className="content-view-body"
+  >
+    Select a member to learn more about them
+  </p>
+</div>
+`;

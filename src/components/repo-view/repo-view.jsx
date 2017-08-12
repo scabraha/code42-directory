@@ -37,7 +37,7 @@ RepoView.propTypes = {
   repos: PropTypes.arrayOf(PropTypes.shape({
     html_url: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    language: PropTypes.string.isRequired
+    language: PropTypes.string.isRequired,
     description: PropTypes.string,
   })).isRequired
 }

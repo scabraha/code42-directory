@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Repo View Renders the view with repo details and ensures it renders correctly 1`] = `
+<ul
+  className="repo-list"
+>
+  <li
+    className="repo-list-item"
+  >
+    <div
+      className="md-title"
+    >
+      <a
+        href="url1"
+      >
+        repo1
+      </a>
+    </div>
+    <div
+      className="md-body-2"
+    >
+      description1
+    </div>
+    <div
+      className="md-body-1"
+    >
+      language1
+    </div>
+  </li>
+  <li
+    className="repo-list-item"
+  >
+    <div
+      className="md-title"
+    >
+      <a
+        href="url2"
+      >
+        repo2
+      </a>
+    </div>
+    <div
+      className="md-body-2"
+    >
+      description2
+    </div>
+    <div
+      className="md-body-1"
+    >
+      language2
+    </div>
+  </li>
+  <li
+    className="repo-list-item"
+  >
+    <div
+      className="md-title"
+    >
+      <a
+        href="url3"
+      >
+        repo3
+      </a>
+    </div>
+    <div
+      className="md-body-2"
+    >
+      description3
+    </div>
+    <div
+      className="md-body-1"
+    >
+      language3
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`Repo View Renders the view without repo details and failure status and ensures it renders correctly 1`] = `
+<div
+  className="md-body-2"
+>
+  Failed to retrieve repositories
+</div>
+`;
+
+exports[`Repo View Renders the view without repo details and loading status and ensures it renders correctly 1`] = `
+<i
+  className="loading-spinner material-icons"
+>
+  
+</i>
+`;

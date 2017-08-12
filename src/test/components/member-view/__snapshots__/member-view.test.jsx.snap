@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Member View Renders the view with an organization and failure status and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+>
+  <div
+    className="member-view-text md-subheading-2 md-text-center"
+  >
+    <div>
+      <i
+        className="material-icons"
+      >
+        
+      </i>
+    </div>
+    Member retrieval failure
+  </div>
+</div>
+`;
+
+exports[`Member View Renders the view with an organization and loading status and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+>
+  <div
+    className="member-view-text md-subheading-2 md-text-center"
+  >
+    <div>
+      <i
+        className="loading-spinner material-icons"
+      >
+        
+      </i>
+    </div>
+    Retrieving members for 
+    testOrgnization
+  </div>
+</div>
+`;
+
+exports[`Member View Renders the view with an organization and not started status and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+/>
+`;
+
+exports[`Member View Renders the view with an organization and success status and ensures it renders correctly 1`] = `
+<div
+  className="member-view"
+>
+  <MemberList />
+</div>
+`;
