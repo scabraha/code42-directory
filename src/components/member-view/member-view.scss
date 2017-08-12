@@ -1,0 +1,17 @@
+@import '../../globals';
+
+.member-view {
+  position: fixed;
+  top: $toolbar-offset;
+  left: 0;
+  height: 100%;
+  width: $sidebar-width; 
+  box-shadow: $DP8;
+}
+
+.member-view-load {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

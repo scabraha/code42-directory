@@ -1,0 +1,15 @@
+@import '../../globals';
+
+.Header {
+  position: fixed;
+  top: 0;
+  padding: 10px;
+  width: 100%;
+  background-color: $md-primary-color;
+  box-shadow: $DP8;
+
+  h1 {
+    color: $md-white-base;
+    margin-bottom: 0;
+  }
+}

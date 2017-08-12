@@ -1,5 +1,15 @@
 // Sets the global import for react-md as well as the global colors
 @import '../node_modules/react-md/src/scss/react-md';
+@import 'style-helpers/reset';
+@import 'style-helpers/dp';
 
 $md-primary-color: $md-deep-orange-600;
 $md-secondary-color: $md-blue-grey-700;
+
+$toolbar-height: 52px;
+$toolbar-shadow: 8px;
+$toolbar-offset: $toolbar-height + $toolbar-shadow;
+
+$sidebar-width: 250px;
+
+
