@@ -1,0 +1,15 @@
+.member-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+.member-details-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 30px 0;
+  text-align: left;
+}
