@@ -1,17 +1,17 @@
-@import 'globals';
+@import '../../globals';
 
-.app {
+.content-view {
   text-align: center;
   margin-top: $toolbar-offset;
   margin-left: $sidebar-width;
 }
 
-.app-logo {
+.content-view-image {
   color: $md-primary-color;
   height: 80px;
 }
 
-.app-header {
+.content-view-header {
   background-color: $md-secondary-color;
   height: 150px;
   padding: 20px;
@@ -21,11 +21,7 @@
   }
 }
 
-.app-intro {
+.content-view-intro {
   font-size: large;
-}
-
-.app-loading-indicator {
-  text-align: center;
-  padding: 20px 0px;
+  align-self: flex-end;
 }
