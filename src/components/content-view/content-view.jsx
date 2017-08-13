@@ -49,11 +49,7 @@ export default class ContentView extends React.Component {
       default:
         avatar = LOGO; 
         title = 'Welcome to the Code42 GitHub Directory';
-        content = (
-          <p className="content-view-body">
-            Select a member to learn more about them 
-          </p>
-        );
+        content = <p className="content-view-body">Select a member to learn more about them</p>;
         break;
     }
 

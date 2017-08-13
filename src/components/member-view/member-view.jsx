@@ -38,7 +38,7 @@ function renderFailureMessage() {
  * @param {String} teamMemberRequestStatus The current request status for team members. Used to show
  * the appropriate status message.
  */
-class MemberView extends React.Component {
+export default class MemberView extends React.Component {
   render() {
     let content;
     switch(this.props.teamMemberRequestStatus) {
@@ -71,4 +71,3 @@ MemberView.propTypes = {
   teamMemberRequestStatus: PropTypes.string.isRequired
 }
 
-export default MemberView;

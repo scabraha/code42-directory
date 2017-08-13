@@ -20,7 +20,7 @@ function renderRepoItem(repo) {
  * @prop {String} repoRequestStatus The current status of the repo request.
  * @prop {Array} repos The array of repositories to show. May be empty if none are available.
  */
-class RepoView extends React.Component {
+export default class RepoView extends React.Component {
   render() {
     if (this.props.repoRequestStatus === ServiceStatus.LOADING) {
       return <LoadingIndicator />
@@ -42,4 +42,3 @@ RepoView.propTypes = {
   })).isRequired
 }
 
-export default RepoView;

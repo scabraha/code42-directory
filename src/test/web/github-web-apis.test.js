@@ -14,7 +14,7 @@ describe('GitHub Web APIs', () => {
     expect($.ajax).toHaveBeenCalledWith({
       url: 'http://api.github.com/orgs/test/members',
       cache: false,
-      dataType: 'json'
+      dataType: 'json',
     });
 
     doneSpy.calls.mostRecent().args[0]('testData');
@@ -36,7 +36,7 @@ describe('GitHub Web APIs', () => {
     expect($.ajax).toHaveBeenCalledWith({
       url: 'http://api.github.com/users/test',
       cache: false,
-      dataType: 'json'
+      dataType: 'json',
     });
 
     doneSpy.calls.mostRecent().args[0]('testData');
@@ -58,7 +58,7 @@ describe('GitHub Web APIs', () => {
     expect($.ajax).toHaveBeenCalledWith({
       url: 'http://api.github.com/users/test/repos',
       cache: false,
-      dataType: 'json'
+      dataType: 'json',
     });
 
     doneSpy.calls.mostRecent().args[0]('testData');

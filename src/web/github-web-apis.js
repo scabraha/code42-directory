@@ -8,7 +8,7 @@ export function getMembersByOrg(org, onSuccess, onFailure) {
   $.ajax({
     url: `http://api.github.com/orgs/${org}/members`,
     cache: false,
-    dataType: 'json'
+    dataType: 'json',
   }).done(data => onSuccess(data)).fail(onFailure);
 }
 
@@ -20,7 +20,7 @@ export function getDetailsByUserId(userId, onSuccess, onFailure) {
   $.ajax({
     url: `http://api.github.com/users/${userId}`,
     cache: false,
-    dataType: 'json'
+    dataType: 'json',
   }).done(data => onSuccess(data)).fail(onFailure);
 }
 
@@ -32,6 +32,6 @@ export function getReposByUserId(userId, onSuccess, onFailure) {
   $.ajax({
     url: `http://api.github.com/users/${userId}/repos`,
     cache: false,
-    dataType: 'json'
+    dataType: 'json',
   }).done(data => onSuccess(data)).fail(onFailure);
 }
