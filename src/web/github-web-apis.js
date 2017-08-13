@@ -5,9 +5,11 @@ import $ from 'jquery';
  * @param {String} org The GitHub organization to retrieve members for.
  */
 export function getMembersByOrg(org, onSuccess, onFailure) {
-  $.getJSON(`http://api.github.com/orgs/${org}/members`)
-    .done(data => onSuccess(data))
-    .fail(onFailure);
+  $.ajax({
+    url: `http://api.github.com/orgs/${org}/members`,
+    cache: false,
+    dataType: 'json'
+  }).done(data => onSuccess(data)).fail(onFailure);
 }
 
 /**
@@ -15,9 +17,11 @@ export function getMembersByOrg(org, onSuccess, onFailure) {
  * @param {String} userId The unique identifier of the user to retrieve details for.
  */
 export function getDetailsByUserId(userId, onSuccess, onFailure) {
-  $.getJSON(`http://api.github.com/users/${userId}`)
-    .done(data => onSuccess(data))
-    .fail(onFailure);
+  $.ajax({
+    url: `http://api.github.com/users/${userId}`,
+    cache: false,
+    dataType: 'json'
+  }).done(data => onSuccess(data)).fail(onFailure);
 }
 
 /**
@@ -25,7 +29,9 @@ export function getDetailsByUserId(userId, onSuccess, onFailure) {
  * @param {String} userId The unique identifier of the user to retrieve repositories for.
  */
 export function getReposByUserId(userId, onSuccess, onFailure) {
-  $.getJSON(`http://api.github.com/users/${userId}/repos`)
-    .done(data => onSuccess(data))
-    .fail(onFailure);
+  $.ajax({
+    url: `http://api.github.com/users/${userId}/repos`,
+    cache: false,
+    dataType: 'json'
+  }).done(data => onSuccess(data)).fail(onFailure);
 }

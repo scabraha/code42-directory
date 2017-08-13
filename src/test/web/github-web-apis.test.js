@@ -5,13 +5,17 @@ describe('GitHub Web APIs', () => {
   it('Calls getMembersByOrg and ensures the url and callbacks are correct', () => {
     const failSpy = jasmine.createSpy('failSpy');
     const doneSpy = jasmine.createSpy('doneSpy').and.returnValue({ fail: failSpy });
-    spyOn($, 'getJSON').and.returnValue({ done: doneSpy });
+    spyOn($, 'ajax').and.returnValue({ done: doneSpy });
 
     const onSuccess = jasmine.createSpy('onSuccess');
     const onFailure = jasmine.createSpy('onFailure');
 
     getMembersByOrg('test', onSuccess, onFailure);
-    expect($.getJSON).toHaveBeenCalledWith('http://api.github.com/orgs/test/members');
+    expect($.ajax).toHaveBeenCalledWith({
+      url: 'http://api.github.com/orgs/test/members',
+      cache: false,
+      dataType: 'json'
+    });
 
     doneSpy.calls.mostRecent().args[0]('testData');
     expect(onSuccess).toHaveBeenCalledWith('testData');
@@ -23,13 +27,17 @@ describe('GitHub Web APIs', () => {
   it('Calls getDetailsByUserId and ensures the url and callbacks are correct', () => {
     const failSpy = jasmine.createSpy('failSpy');
     const doneSpy = jasmine.createSpy('doneSpy').and.returnValue({ fail: failSpy });
-    spyOn($, 'getJSON').and.returnValue({ done: doneSpy });
+    spyOn($, 'ajax').and.returnValue({ done: doneSpy });
 
     const onSuccess = jasmine.createSpy('onSuccess');
     const onFailure = jasmine.createSpy('onFailure');
 
     getDetailsByUserId('test', onSuccess, onFailure);
-    expect($.getJSON).toHaveBeenCalledWith('http://api.github.com/users/test');
+    expect($.ajax).toHaveBeenCalledWith({
+      url: 'http://api.github.com/users/test',
+      cache: false,
+      dataType: 'json'
+    });
 
     doneSpy.calls.mostRecent().args[0]('testData');
     expect(onSuccess).toHaveBeenCalledWith('testData');
@@ -41,13 +49,17 @@ describe('GitHub Web APIs', () => {
   it('Calls getReposByUserId and ensures the url and callbacks are correct', () => {
     const failSpy = jasmine.createSpy('failSpy');
     const doneSpy = jasmine.createSpy('doneSpy').and.returnValue({ fail: failSpy });
-    spyOn($, 'getJSON').and.returnValue({ done: doneSpy });
+    spyOn($, 'ajax').and.returnValue({ done: doneSpy });
 
     const onSuccess = jasmine.createSpy('onSuccess');
     const onFailure = jasmine.createSpy('onFailure');
 
     getReposByUserId('test', onSuccess, onFailure);
-    expect($.getJSON).toHaveBeenCalledWith('http://api.github.com/users/test/repos');
+    expect($.ajax).toHaveBeenCalledWith({
+      url: 'http://api.github.com/users/test/repos',
+      cache: false,
+      dataType: 'json'
+    });
 
     doneSpy.calls.mostRecent().args[0]('testData');
     expect(onSuccess).toHaveBeenCalledWith('testData');
